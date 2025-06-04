@@ -1,26 +1,684 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Base colors - E-commerce Dark Theme */
+  --background: #0F0F23;          /* Deep Purple Night */
+  --surface: #1A1B3A;            /* Rich Purple Surface */
+  --elevated: #252653;           /* Elevated Purple */
+  --card: #2A2D5F;               /* Card Background */
+  
+  /* Text colors */
+  --text-primary: #FFFFFF;        /* Pure White */
+  --text-secondary: #B8BCC8;      /* Light Gray */
+  --text-muted: #9CA3AF;         /* Muted Gray */
+  --text-disabled: #6B7280;      /* Disabled Gray */
+  
+  /* Brand colors - E-commerce focused */
+  --brand-primary: #7C3AED;       /* Primary Purple */
+  --brand-secondary: #3B82F6;     /* Secondary Blue */
+  --brand-accent: #F59E0B;        /* Accent Orange */
+  --brand-gradient: linear-gradient(135deg, #7C3AED, #3B82F6);
+  
+  /* Commerce specific colors */
+  --price-color: #10B981;         /* Green for prices */
+  --sale-color: #EF4444;          /* Red for sales */
+  --discount-color: #F59E0B;      /* Orange for discounts */
+  --premium-color: #F59E0B;       /* Gold for premium */
+  
+  /* Status colors */
+  --status-success: #10B981;      /* Success Green */
+  --status-error: #EF4444;        /* Error Red */
+  --status-warning: #F59E0B;      /* Warning Orange */
+  --status-info: #3B82F6;        /* Info Blue */
+  
+  /* Interactive states */
+  --hover-primary: #8B5CF6;       /* Primary Hover */
+  --hover-secondary: #4F46E5;     /* Secondary Hover */
+  --hover-surface: rgba(37, 38, 83, 0.8);
+  --hover-card: rgba(42, 45, 95, 0.9);
+  
+  /* Component backgrounds */
+  --nav-background: rgba(15, 15, 35, 0.95);
+  --modal-background: var(--elevated);
+  --dropdown-background: var(--surface);
+  --tooltip-background: var(--elevated);
+  
+  /* Border colors */
+  --border-primary: #374151;      /* Primary Border */
+  --border-secondary: #4B5563;    /* Secondary Border */
+  --border-accent: var(--brand-primary);
+  
+  /* Input colors */
+  --input-background: var(--surface);
+  --input-border: var(--border-primary);
+  --input-focus: var(--brand-primary);
+  --input-placeholder: var(--text-muted);
+  
+  /* Cart and commerce specific */
+  --cart-badge: var(--sale-color);
+  --add-to-cart: var(--status-success);
+  --buy-now: var(--brand-primary);
+  --wishlist: var(--sale-color);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+  --gradient-surface: linear-gradient(180deg, var(--surface), var(--elevated));
+  --gradient-card: linear-gradient(145deg, var(--card), var(--elevated));
+  --gradient-hero: linear-gradient(135deg, #7C3AED 0%, #3B82F6 50%, #10B981 100%);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(124, 58, 237, 0.3);
+  
+  /* Scrollbar Colors */
+  --scrollbar-track: var(--surface);
+  --scrollbar-thumb: var(--elevated);
+  --scrollbar-thumb-hover: var(--brand-primary);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0F0F23;
+    --foreground: #FFFFFF;
   }
 }
 
 body {
+  color: var(--text-primary);
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar Styles */
+/* For Webkit browsers (Chrome, Safari, etc) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 8px;
+  border: 2px solid var(--scrollbar-track);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+  box-shadow: var(--shadow-glow);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--scrollbar-track);
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* For Edge and IE */
+*::-ms-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-ms-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 8px;
+}
+
+*::-ms-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 8px;
+  border: 2px solid var(--scrollbar-track);
+}
+
+*::-ms-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Base utility classes */
+.bg-primary {
+  background-color: var(--background);
+}
+
+.bg-surface {
+  background-color: var(--surface);
+}
+
+.bg-elevated {
+  background-color: var(--elevated);
+}
+
+.bg-card {
+  background-color: var(--card);
+}
+
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.bg-gradient-hero {
+  background: var(--gradient-hero);
+}
+
+/* Text utilities */
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-disabled {
+  color: var(--text-disabled);
+}
+
+.text-brand {
+  color: var(--brand-primary);
+}
+
+.text-price {
+  color: var(--price-color);
+}
+
+.text-sale {
+  color: var(--sale-color);
+}
+
+.text-discount {
+  color: var(--discount-color);
+}
+
+/* Border utilities */
+.border-primary {
+  border-color: var(--border-primary);
+}
+
+.border-secondary {
+  border-color: var(--border-secondary);
+}
+
+.border-accent {
+  border-color: var(--border-accent);
+}
+
+/* E-commerce specific component classes */
+.product-card {
+  background: var(--card);
+  border: 1px solid var(--border-primary);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--brand-primary);
+  background: var(--hover-card);
+}
+
+.product-image-container {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+  aspect-ratio: 1;
+}
+
+.product-badge {
+  background: var(--sale-color);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+}
+
+.product-badge.discount {
+  background: var(--discount-color);
+}
+
+.product-badge.premium {
+  background: var(--premium-color);
+}
+
+.product-wishlist {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.product-card:hover .product-wishlist {
+  opacity: 1;
+}
+
+.product-wishlist:hover {
+  background: var(--wishlist);
+  transform: scale(1.1);
+}
+
+.product-wishlist.active {
+  background: var(--wishlist);
+  opacity: 1;
+}
+
+.product-info {
+  padding: 16px;
+}
+
+.product-category {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-title {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 8px 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 8px 0;
+}
+
+.rating-stars {
+  color: var(--discount-color);
+  font-size: 0.875rem;
+}
+
+.rating-count {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.price-current {
+  color: var(--price-color);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.price-original {
+  color: var(--text-muted);
+  font-size: 1rem;
+  text-decoration: line-through;
+}
+
+.price-discount {
+  color: var(--discount-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--brand-primary);
+  color: var(--text-primary);
+}
+
+.btn-primary:hover {
+  background: var(--hover-primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: var(--brand-secondary);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--hover-secondary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-success {
+  background: var(--add-to-cart);
+  color: var(--text-primary);
+}
+
+.btn-success:hover {
+  background: #059669;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--brand-primary);
+  color: var(--brand-primary);
+}
+
+.btn-outline:hover {
+  background: var(--brand-primary);
+  color: var(--text-primary);
+}
+
+.btn-ghost {
+  background: var(--hover-surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-primary);
+}
+
+.btn-ghost:hover {
+  background: var(--hover-card);
+  color: var(--text-primary);
+  border-color: var(--brand-primary);
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+}
+
+.btn-lg {
+  padding: 14px 24px;
+  font-size: 1rem;
+}
+
+/* Navigation styles */
+.nav-primary {
+  background: var(--nav-background);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+  background: var(--hover-surface);
+}
+
+.nav-link.active {
+  color: var(--brand-primary);
+  background: rgba(124, 58, 237, 0.1);
+}
+
+/* Cart styles */
+.cart-icon {
+  position: relative;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cart-icon:hover {
+  background: var(--hover-surface);
+  color: var(--brand-primary);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: var(--cart-badge);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--background);
+}
+
+/* Form styles */
+.form-input {
+  background: var(--input-background);
+  border: 1px solid var(--input-border);
+  color: var(--text-primary);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.form-input::placeholder {
+  color: var(--input-placeholder);
+}
+
+.form-label {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Search styles */
+.search-container {
+  position: relative;
+  flex: 1;
+  max-width: 600px;
+}
+
+.search-input {
+  background: var(--input-background);
+  border: 1px solid var(--input-border);
+  color: var(--text-primary);
+  padding: 12px 48px 12px 16px;
+  border-radius: 24px;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--input-focus);
+  box-shadow: var(--shadow-glow);
+}
+
+.search-button {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--brand-primary);
+  color: var(--text-primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button:hover {
+  background: var(--hover-primary);
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Custom Scrollbar for specific containers */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+  border: 1px solid var(--scrollbar-track);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(26, 27, 58, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(15, 15, 35, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Animation utilities */
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.6);
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .btn {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+  
+  .product-info {
+    padding: 12px;
+  }
+  
+  .price-current {
+    font-size: 1.125rem;
+  }
+  
+  .search-input {
+    padding: 10px 40px 10px 12px;
+  }
 }
