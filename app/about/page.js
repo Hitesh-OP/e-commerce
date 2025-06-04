@@ -109,11 +109,11 @@ const AboutPage = () => {
             
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <img 
+                {/* <img 
                   src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop" 
                   alt="ShopHub team working" 
                   className="rounded-lg shadow-xl"
-                />
+                /> */}
               </div>
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -181,11 +181,11 @@ const AboutPage = () => {
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {team.map((member, index) => (
               <div key={index} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                <img 
+                {/* <img 
                   src={member.image} 
                   alt={member.name}
                   className="w-full h-64 object-cover"
-                />
+                /> */}
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                     {member.name}

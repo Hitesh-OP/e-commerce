@@ -212,14 +212,14 @@ const CartPage = () => {
                     <div className="flex items-start space-x-4">
                       {/* Product Image */}
                       <div className="flex-shrink-0">
-                        <img
+                        {/* <img
                           src={item.image}
                           alt={item.name}
                           className="w-24 h-24 object-cover rounded-lg"
                           onError={(e) => {
                             e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xMDAgMTAwTDEwMCA5MEwxMTAgOTBMMTEwIDEwMEwxMDAgMTAwWiIgZmlsbD0iIzlDQTNBRiIvPgo8L3N2Zz4K'
                           }}
-                        />
+                        /> */}
                       </div>
 
                       {/* Product Details */}

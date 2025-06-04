@@ -233,7 +233,7 @@ export default function RecentlyViewed() {
                 {/* Product Image */}
                 <div className="relative overflow-hidden rounded-t-lg">
                   <div className="relative h-48 bg-gray-100 dark:bg-gray-700">
-                    <Image
+                    {/* <Image
                       src={product.image}
                       alt={product.name}
                       fill
@@ -241,7 +241,7 @@ export default function RecentlyViewed() {
                       onError={(e) => {
                         e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xMjUgMTI1TDE3NSAxNzVNMTc1IDEyNUwxMjUgMTc1IiBzdHJva2U9IiM5Q0E0QUYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjx0ZXh0IHg9IjE1MCIgeT0iMjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOUNBNEFGIiBmb250LXNpemU9IjE0cHgiPlByb2R1Y3Q8L3RleHQ+Cjwvc3ZnPg=='
                       }}
-                    />
+                    /> */}
                     
                     {/* Badges */}
                     <div className="absolute top-2 left-2 flex flex-col gap-1">

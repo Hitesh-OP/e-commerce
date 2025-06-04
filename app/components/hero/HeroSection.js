@@ -87,7 +87,7 @@ const HeroSection = () => {
       
       {/* Background Image */}
       <div className="absolute inset-0">
-        <Image
+        {/* <Image
           src={currentSlideData.image}
           alt={currentSlideData.title || 'Hero image'}
           fill
@@ -98,7 +98,7 @@ const HeroSection = () => {
             // Fallback to placeholder if image fails to load
             e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI4MDAiIHZpZXdCb3g9IjAgMCAxMjAwIDgwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iODAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik01ODUgMzc1SDYxNVY0MjVINTg1VjM3NVoiIGZpbGw9IiM5Q0E0QUYiLz4KPC9zdmc+'
           }}
-        />
+        /> */}
       </div>
 
       {/* Content Container */}
@@ -180,7 +180,7 @@ const HeroSection = () => {
             {/* Visual Content */}
             <div className="relative">
               <div className="relative w-full h-96 lg:h-[500px]">
-                <Image
+                {/* <Image
                   src={currentSlideData.image}
                   alt={currentSlideData.title || 'Product showcase'}
                   fill
@@ -191,7 +191,7 @@ const HeroSection = () => {
                     // Fallback to placeholder if image fails to load
                     e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0yMjUgMjI1SDI3NVYyNzVIMjI1VjIyNVoiIGZpbGw9IiM5Q0E0QUYiLz4KPC9zdmc+'
                   }}
-                />
+                /> */}
                 
                 {/* Floating Elements */}
                 <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white">

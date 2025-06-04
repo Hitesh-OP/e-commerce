@@ -89,14 +89,14 @@ export default function CategoryGrid() {
           className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
         >
           <div className="relative h-48 w-full">
-            <Image
+            {/* <Image
               src={failedImages.has(category.id) ? generateFallbackImage(category.name) : category.image}
               alt={`${category.name} category`}
               fill
               className="object-cover group-hover:scale-110 transition-transform duration-300"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               onError={() => handleImageError(category.id, category.name)}
-            />
+            /> */}
             
             {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />

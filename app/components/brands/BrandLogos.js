@@ -64,7 +64,7 @@ export default function BrandLogos() {
             key={brand.id}
             className="group relative w-24 h-16 flex items-center justify-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
           >
-            <Image
+            {/* <Image
               src={brand.logo}
               alt={brand.alt}
               width={80}
@@ -75,7 +75,7 @@ export default function BrandLogos() {
                 e.target.style.display = 'none'
                 e.target.nextSibling.style.display = 'block'
               }}
-            />
+            /> */}
             <div className="hidden text-gray-600 dark:text-gray-300 font-semibold text-sm">
               {brand.name}
             </div>
@@ -92,7 +92,7 @@ export default function BrandLogos() {
               key={`first-${brand.id}`}
               className="flex-shrink-0 w-20 h-12 flex items-center justify-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm"
             >
-              <Image
+              {/* <Image
                 src={brand.logo}
                 alt={brand.alt}
                 width={60}
@@ -102,7 +102,7 @@ export default function BrandLogos() {
                   e.target.style.display = 'none'
                   e.target.nextSibling.style.display = 'block'
                 }}
-              />
+              /> */}
               <div className="hidden text-gray-600 dark:text-gray-300 font-semibold text-xs">
                 {brand.name}
               </div>
@@ -114,7 +114,7 @@ export default function BrandLogos() {
               key={`second-${brand.id}`}
               className="flex-shrink-0 w-20 h-12 flex items-center justify-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm"
             >
-              <Image
+              {/* <Image
                 src={brand.logo}
                 alt={brand.alt}
                 width={60}
@@ -124,7 +124,7 @@ export default function BrandLogos() {
                   e.target.style.display = 'none'
                   e.target.nextSibling.style.display = 'block'
                 }}
-              />
+              /> */}
               <div className="hidden text-gray-600 dark:text-gray-300 font-semibold text-xs">
                 {brand.name}
               </div>

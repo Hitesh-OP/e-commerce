@@ -155,7 +155,7 @@ function BlogPosts() {
             {/* Post Image */}
             <div className="relative overflow-hidden">
               <div className={`relative ${post.featured && index === 0 ? 'h-64' : 'h-48'}`}>
-                <Image
+                {/* <Image
                   src={post.image}
                   alt={post.title}
                   fill
@@ -163,7 +163,7 @@ function BlogPosts() {
                   onError={(e) => {
                     e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xNTAgMTUwTDI1MCAyNTBNMjUwIDE1MEwxNTAgMjUwIiBzdHJva2U9IiM5Q0E0QUYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOUNBNEFGIiBmb250LXNpemU9IjE0cHgiPkJsb2cgUG9zdDwvdGV4dD4KPC9zdmc+'
                   }}
-                />
+                /> */}
                 {post.featured && index === 0 && (
                   <div className="absolute top-4 left-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
                     Featured
@@ -183,7 +183,7 @@ function BlogPosts() {
               <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
                 <div className="flex items-center space-x-2">
                   <div className="w-6 h-6 bg-gray-300 dark:bg-gray-600 rounded-full overflow-hidden">
-                    <Image
+                    {/* <Image
                       src={post.author.avatar}
                       alt={post.author.name}
                       width={24}
@@ -193,7 +193,7 @@ function BlogPosts() {
                         e.target.style.display = 'none'
                         e.target.nextSibling.style.display = 'flex'
                       }}
-                    />
+                    /> */}
                     <div className="hidden w-full h-full bg-gray-400 dark:bg-gray-500 items-center justify-center text-xs text-white font-semibold">
                       {post.author.name.charAt(0)}
                     </div>

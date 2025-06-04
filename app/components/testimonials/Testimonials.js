@@ -123,12 +123,12 @@ export function Testimonials() {
                     {/* Header with avatar and info */}
                     <div className="flex items-center mb-4">
                       <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
-                        <Image
+                        {/* <Image
                           src={testimonial.image}
                           alt={testimonial.name}
                           fill
                           className="object-cover"
-                        />
+                        /> */}
                       </div>
                       <div className="flex-1">
                         <h4 className="font-semibold text-gray-900 dark:text-white">

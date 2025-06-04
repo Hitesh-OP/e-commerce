@@ -244,13 +244,13 @@ const TrendingProducts = () => {
 
         {/* Product Image */}
         <div className="relative aspect-square overflow-hidden">
-          <Image
+          {/* <Image
             src={imageError ? generateFallbackImage(product.name) : product.image}
             alt={product.name}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"
             onError={() => setImageError(true)}
-          />
+          /> */}
           
           {/* Trending Badge */}
           <div className="absolute top-3 right-3 z-10">

@@ -1,6 +1,3 @@
-// app/page.js
-import { Suspense } from 'react'
-
 // Component imports with proper paths
 import HeroSection from './components/hero/HeroSection'
 import FeaturedProducts from './components/products/FeaturedProducts'

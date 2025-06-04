@@ -42,7 +42,7 @@ const Header = () => {
     return () => document.removeEventListener('click', handleClickOutside)
   }, [])
 
-  const navigation = [
+  const Navigation = [
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/item' }, // This already links to /item
     { name: 'Categories', href: '/categories' },
@@ -99,7 +99,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            {navigation.map((item) => (
+            {Navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -363,7 +363,7 @@ const Header = () => {
         <div className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
           <div className="container mx-auto px-4 py-4">
             <nav className="space-y-2">
-              {navigation.map((item) => (
+              {Navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}

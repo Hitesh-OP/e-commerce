@@ -213,14 +213,14 @@ const FeaturedProducts = () => {
       <div className="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-700">
         {/* Product Image */}
         <div className="relative aspect-square overflow-hidden">
-          <Image
+          {/* <Image
             src={imageError ? generateFallbackImage(product.name) : product.image}
             alt={product.name}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"
             onError={() => setImageError(true)}
           />
-          
+           */}
           {/* Badges */}
           <div className="absolute top-3 left-3 flex flex-col gap-2">
             {product.discount > 0 && (
